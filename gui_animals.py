@@ -113,27 +113,27 @@ class trajpy_animals_gui:
         self.init_window()
         self.app.resizable(False, False)
 
-        self.title_label = Label(self.app, text="TrajPy",font=("Arial Bold", 35)) #title label
-        self.version_label = Label(self.app, text="Animal Tracking", font=("Arial Bold", 10)) #version label
+        self.title_label = Label(self.app, text="OnTrack",font=("Arial Bold", 35)) #title label
+        self.version_label = Label(self.app, text="Object Tracking", font=("Arial Bold", 8)) #version label
         self.test_label = Label(self.app,text='Insert 0,1,...',font=('Helvetica 12 bold')) #test label
         self.first_label = Label(self.app,text='Insert live/rec, cam code(int)/video path, file name',font=('Helvetica 16'))# first label
-        self.second_label = Label(self.app,text="Insert object's width,height",font=('Helvetica 16'))#second label
+        self.second_label = Label(self.app,text="Insert object's width,height (in cm)",font=('Helvetica 16'))#second label
         self.third_label = Label(self.app,text="Insert site corners for t inside(x1,x2,y1,y2)",font=('Helvetica 16'))#third label
         self.fourth_label = Label(self.app,text="Insert site corners for t ouside(x1,x2,y1,y2)",font=('Helvetica 16'))#fourth label
         self.results = []
 
 
         self.test_entry = Entry(self.app,width=10,font=('Arial',12)) #test_entry
-        self.test_entry.insert(0, "Insert 0,1,...")
+        #self.test_entry.insert(0, "Insert 0,1,...")
         self.path = os.path.dirname(os.path.realpath(__file__))
         self.file_entry = Entry(self.app,width=63,font=('Arial',12)) #file entry
-        self.file_entry.insert(0,"Insert live/rec, cam code(int)/video path, file name")
+        #self.file_entry.insert(0,"Insert live/rec, cam code(int)/video path, file name")
         self.number_entry = Entry(self.app,width=63,font=('Arial',12)) #number entry
-        self.number_entry.insert(0,"Insert object's width,height")
+        #self.number_entry.insert(0,"Insert object's width,height")
         self.center_entry = Entry(self.app,width=63,font=('Arial',12)) #center_entry
-        self.center_entry.insert(0,"Insert site corners for t inside(x1,x2,y1,y2)")
+        #self.center_entry.insert(0,"Insert site corners for t inside(x1,x2,y1,y2)")
         self.edges_entry = Entry(self.app,width=63,font=('Arial',12)) #edges_entry
-        self.edges_entry.insert(0,"Insert site corners for t ouside(x1,x2,y1,y2)")
+        #self.edges_entry.insert(0,"Insert site corners for t ouside(x1,x2,y1,y2)")
 
 
         self.track_button = Button(self.app,text='Track!',command=self.track_function,font=('Arial',20)) #track button
