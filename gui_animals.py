@@ -114,7 +114,7 @@ class trajpy_animals_gui:
         self.app.resizable(False, False)
 
         self.title_label = Label(self.app, text="OnTrack",font=("Arial Bold", 35)) #title label
-        self.version_label = Label(self.app, text="Object Tracking", font=("Arial Bold", 8)) #version label
+        self.version_label = Label(self.app, text="Computer Vision for Trajectory Analysis", font=("Arial Bold", 8)) #
         self.test_label = Label(self.app,text='Insert 0,1,...',font=('Helvetica 12 bold')) #test label
         self.first_label = Label(self.app,text='Insert live/rec, cam code(int)/video path, file name',font=('Helvetica 16'))# first label
         self.second_label = Label(self.app,text="Insert object's width,height (in cm)",font=('Helvetica 16'))#second label
@@ -159,12 +159,12 @@ class trajpy_animals_gui:
 
 
     def init_window(self):
-        self.app.title('TrajPy Animals GUI')
+        self.app.title('OnTrack')
         self.app.geometry('600x500')
 
     def placement(self):
         self.title_label.place(x=230,y=0)
-        self.version_label.place(x=247,y=50)
+        self.version_label.place(x=225,y=47)
         self.test_label.place(x=295,y=65)
         self.first_label.place(x=12,y=120)
         self.second_label.place(x=12,y=180)
@@ -220,7 +220,7 @@ class trajpy_animals_gui:
             ret, frame = cap.read()
             if not ret:
                 break
-            stop_text = 'Press "q" to stop'
+            stop_text = 'Press "Q" on your keyboard to exit'
             cv2.putText(frame,stop_text,(50,50),cv2.FONT_HERSHEY_SIMPLEX, 0.8, (0,0,255), 2)
             cv2.line(frame,(0,0),(511,0),(255,0,0),5)
             cv2.putText(frame,'X',(250,25),cv2.FONT_HERSHEY_SIMPLEX, 0.8, (0,0,255), 2)
@@ -270,7 +270,7 @@ class trajpy_animals_gui:
         plt.gca().autoscale()
         cbar = plt.colorbar(lc,orientation="horizontal")
         cbar.set_label(r'$t~$[min]',fontsize=12)
-        plt.xlabel(r'$x~$[cm',fontsize=12)
+        plt.xlabel(r'$x~$[cm]',fontsize=12)
         plt.ylabel(r'$y~$[cm]',fontsize=12)
         
 
